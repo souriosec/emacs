@@ -55,5 +55,4 @@
 ;;
 (package! org-download)
 
-;; Remove lsp-pyright - replaced by ty
-(package! lsp-pyright :disable t)
+(package! ef-themes)
