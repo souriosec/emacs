@@ -92,9 +92,13 @@
 ;; they are implemented.
 ;;
 ;; Configure eglot to use ty as the LSP server
+;; Note: Must specify :language-id "python" because ty expects "python" but
+;; python-base-mode would send "python-base" which ty doesn't recognize,
+;; resulting in no type checking diagnostics being shown.
+;; See: https://github.com/astral-sh/ty/issues/2937
 (with-eval-after-load 'eglot
   (add-to-list 'eglot-server-programs
-               '(python-base-mode . ("ty" "server")))
+               '((python-base-mode :language-id "python") . ("ty" "server")))
   ;; Disable inlay hints globally for all Eglot managed buffers
   (add-to-list 'eglot-ignored-server-capabilities :inlayHintProvider))
 
