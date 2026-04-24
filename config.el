@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;; (setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-gruvbox)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -112,21 +112,6 @@
 ;; Limit eldoc to single line (truncate long function signatures)
 (setq eldoc-echo-area-use-multiline-p nil)
 
-;; Theme
-(use-package ef-themes
-  :ensure t
-  :init
-  (ef-themes-take-over-modus-themes-mode 1)
-  :bind
-  (("<f5>" . modus-themes-rotate)
-   ("C-<f5>" . modus-themes-select)
-   ("M-<f5>" . modus-themes-load-random))
-  :config
-  ;; All customisations here.
-  (setq modus-themes-mixed-fonts t)
-  (setq modus-themes-italic-constructs t)
-  (modus-themes-load-theme 'ef-dream))
-
 ;; Font
 (setq doom-font (font-spec :size 16))
 
@@ -144,8 +129,8 @@
   (add-hook 'org-mode-hook #'my/set-org-download-dir)
 
   (setq org-download-method             'directory
-        org-download-heading-lvl         nil
-        org-download-screenshot-method  "spectacle -n -b -o %s")
+        org-download-heading-lvl         nil)
+  ;; org-download-screenshot-method  "flameshot gui --raw > %s")
 
   (map! :map org-mode-map
         :localleader

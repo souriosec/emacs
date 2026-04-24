@@ -54,5 +54,3 @@
 ;; (unpin! t)
 ;;
 (package! org-download)
-
-(package! ef-themes)
