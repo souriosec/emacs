@@ -135,3 +135,5 @@
   (map! :map org-mode-map
         :localleader
         "P" #'org-download-clipboard))
+
+(setq vterm-shell "/usr/bin/fish")      ; Set default shell to fish
